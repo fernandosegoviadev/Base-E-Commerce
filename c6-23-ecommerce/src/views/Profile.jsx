@@ -1,5 +1,5 @@
 import profileImage from '../images/Profile.png';
-import Navigate from '../components/Navigate';
+import Navigate from '../components/Navigate/Navigate';
 
 function Profile() {
     return (

@@ -1,5 +1,5 @@
 import salesImage from '../images/Sales.png';
-import Navigate from '../components/Navigate';
+import Navigate from '../components/Navigate/Navigate';
 
 
 function Sales() {

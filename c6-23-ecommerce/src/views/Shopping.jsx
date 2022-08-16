@@ -1,5 +1,5 @@
 import shoppingImage from '../images/Shopping.png';
-import Navigate from '../components/Navigate';
+import Navigate from '../components/Navigate/Navigate';
 
 
 function Shopping() {

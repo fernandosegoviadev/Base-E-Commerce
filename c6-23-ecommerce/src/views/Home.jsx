@@ -1,8 +1,8 @@
 import homeImage from '../images/Home.png';
-import Navigate from '../components/Navigate';
-import Cards from '../components/Cards';
+import Navigate from '../components/Navigate/Navigate';
+import Cards from '../components/Cards/Cards';
 import { useState } from 'react';
-import CreateButtons from '../components/CreateButtons';
+import CreateButtons from '../components/CreateButtons/CreateButtons';
 
 function UserView({userType}) {
     return (

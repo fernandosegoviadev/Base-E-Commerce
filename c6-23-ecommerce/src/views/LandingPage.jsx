@@ -1,5 +1,5 @@
-import landingPageImage from '../images/Landing page - SignIn-SignUp.png';
-import Navigate from '../components/Navigate';
+// import landingPageImage from '../images/Landing page - SignIn-SignUp.png';
+import Navigate from '../components/Navigate/Navigate';
 import { RegisterForm } from '../components/RegisterForm/RegisterForm';
 
 function LandingPage() {

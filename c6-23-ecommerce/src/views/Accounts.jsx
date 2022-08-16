@@ -1,5 +1,5 @@
 import accountsImage from '../images/Accounts.png';
-import Navigate from '../components/Navigate';
+import Navigate from '../components/Navigate/Navigate';
 
 
 function Accounts() {

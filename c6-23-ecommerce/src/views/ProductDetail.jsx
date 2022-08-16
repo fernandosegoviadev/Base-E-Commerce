@@ -1,6 +1,6 @@
 import productDetailImage from '../images/Product Detail.png';
-import Navigate from '../components/Navigate';
-import CardDetail from '../components/CardDetail';
+import Navigate from '../components/Navigate/Navigate';
+import CardDetail from '../components/CardDetail/CardDetail';
 
 
 function ProductDetail() {
