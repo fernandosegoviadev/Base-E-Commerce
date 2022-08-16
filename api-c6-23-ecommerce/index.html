@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Servidor levantado</h3> 
+
+        <h4>Manejo de sesiones - /routes/sessions.js</h4>
+        <p>Ruta para Sign In (post): <b>api/signin</b> </p>
+        <p>... para Sign Up (post): <b>api/signup</b></p>
+        <p>... para Log Out (post): <b>api/logout</b></p>
+
+        <h4>Getión de publicaciones - /routes/products.js</h4>
+        <p>... para pedir todas las publicacines (get): <b>api/products</b></p>
+        <p>... para pedir el detalle de una publicación (get): <b>api/product/:idProduct</b></p>
+        <p>... para crear una publicación (post): <b>api/create</b></p>
+        <p>... para eliminar una publicación (delete): <b>api/delete</b></p>
+        <p>... para editar una publicación (put): <b>api/edit</b></p>
+
+        <h4>Getión de compras (users) - /routes/shopping.js</h4>
+        <p>... para realizar la compra del carrito: A definir...</p>
+        <p>... para acceder al historial de compras del usuario: A definir...</p>
+        <p>... para crear y editar el carrito del usuario: A definir...</p>
+
+        <h4>Getión de ventas (admin/dueño) - /routes/sales.js</h4>
+        <p>... para solicitar la información de las ventas realizadas: A definir...</p>
+        <p>... para solicitar la información de las ventas pendientes: A definir...</p>
+        
+        <h4>Getión de cuentas (admin/dueño) - /routes/accounts.js</h4>
+        <p>... para banear un usuario: A definir...</p>
+        <p>... para obtener la lista completa de usuarios de la aplicación: A definir...</p>
+        
+        <h4>Y si llegamos getión de perfil (users/admin) - /routes/profiles.js</h4>
+        <p>... para editar perfil: api/user/edit/:userId</p>
+        <p>... para solicitar información del perfil: api/user/:userId</p>
+    </div>
+</body>
+</html>
