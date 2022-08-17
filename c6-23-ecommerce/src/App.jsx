@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // para poder rutear
-import LandingPage from './views/LandingPage';
-import Home from './views/Home';
-import Shopping from './views/Shopping';
-import Sales from './views/Sales';
-import ProductDetail from './views/ProductDetail';
-import Accounts from './views/Accounts';
-import Profile from './views/Profile';
+import LandingPage from './views/LandingPage/LandingPage';
+import Home from './views/Home/Home';
+import Shopping from './views/Shopping/Shopping';
+import Sales from './views/Sales/Sales';
+import ProductDetail from './views/ProductDetail/ProductDetail';
+import Accounts from './views/Accounts/Accounts';
+import Profile from './views/Profile/Profile';
 
 function App() {
   return (
