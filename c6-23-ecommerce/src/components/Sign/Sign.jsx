@@ -2,7 +2,7 @@ import LoginForm from './SignIn/LoginForm';
 import RegisterForm from './SignUp/RegisterForm';
 import { useState } from 'react';
 
-function Sign() {
+function Sign () {
     const [signType, setSignType] = useState('signUp');
 
     const onSign = () => {

@@ -1,12 +1,12 @@
 .mainLandingBox {
-   background-color: #8e9af3;
-   max-height: 100%;
-   min-height: 100%;
+   background-color: hsl(233, 84%, 80%);
+   min-height: 100vh;
    justify-content: center;
    align-items: center;
 }
 
 .navigationBox {
+   background-color: hwb(233 35% 5%);
    justify-content: center;
    align-items: center;
    display: flex;
@@ -31,6 +31,9 @@
    min-width: 45%;
    max-height: 100%;
    min-height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .signBox {

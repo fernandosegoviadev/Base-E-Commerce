@@ -12,20 +12,21 @@ const userGet = async (req, res = response) => {
     User.find(query).limit(Number(limite)).skip(Number(desde)),
   ]);
 
-  res.json({ total: total, users });
+  res.json({ get: true, total: total, users });
 };
 
 const userPost = async (req, res = response) => {
   const { name, email, password, role } = req.body;
   const user = new User({ name, email, password, role });
 
+  console.log('llega el llamado del front');
   // Encriptar la contrasena
   const salt = bcryptjs.genSaltSync();
   user.password = bcryptjs.hashSync(password, salt);
 
   await user.save();
 
-  res.json({ msg: 'user successfully created!', user });
+  res.json({ create: true, msg: 'user successfully created!', user });
 };
 
 const userPut = async (req, res = response) => {
@@ -45,7 +46,7 @@ const userPut = async (req, res = response) => {
 
   const user = await User.findByIdAndUpdate(id, resto); // returns the new document);
 
-  res.json({ msg: 'user successfully updated!', id, user });
+  res.json({ update: true, msg: 'user successfully updated!', id, user });
 };
 
 const userDelete = async (req, res = response) => {
@@ -61,7 +62,7 @@ const userDelete = async (req, res = response) => {
   );
   console.log(user); */
 
-  res.json({ user, authUser });
+  res.json({ delete: true, user, authUser });
 };
 
 module.exports = {

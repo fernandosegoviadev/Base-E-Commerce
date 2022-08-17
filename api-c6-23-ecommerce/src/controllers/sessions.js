@@ -4,18 +4,21 @@ const { JWTGenerator } = require('../helpers/JWTgenerate');
 
 const login = async (req, res) => {
   const { email, password } = req.body;
+  // console.log('back controllers/sessions email and pass ', email, password);
   try {
     // Verificar si el email existe
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({
+      return res.status(200).json({
+        login: false,
         msg: 'Usuario / Password no son correctos - correo',
       });
     }
 
     // Si el usuario está activo
     if (!user.state) {
-      return res.status(400).json({
+      return res.status(200).json({
+        login: false,
         msg: 'Usuario / Password no son correctos - estado:false',
       });
     }
@@ -23,7 +26,8 @@ const login = async (req, res) => {
     // Verificar la contrasena
     const validPassword = bcryptjs.compareSync(password, user.password);
     if (!validPassword) {
-      return res.status(400).json({
+      return res.status(200).json({
+        login: false,
         msg: 'Usuario / Password no son correctos - password',
       });
     }
@@ -31,14 +35,19 @@ const login = async (req, res) => {
 
     const token = await JWTGenerator(user.id);
 
+    // console.log('back controllers/sessions ', user, token );
+
     res.json({
+      login: true,
       user,
       token,
     });
   } catch (error) {
     console.log(error);
-    res.status(500).json({
+    res.status(400).json({
+      login: false,
       msg: 'Hable con el administrador',
+      error: error,
     });
   }
 

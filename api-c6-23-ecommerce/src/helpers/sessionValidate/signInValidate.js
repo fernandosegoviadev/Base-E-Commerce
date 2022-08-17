@@ -7,6 +7,4 @@ const _validPassword = check('password', 'El password es obligatorio')
   .isEmpty();
 
 const signInValidations = [_validEmail, _validPassword, validationResult];
-module.exports = {
-  signInValidations,
-};
+module.exports = { signInValidations };

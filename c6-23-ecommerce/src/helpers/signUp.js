@@ -2,25 +2,23 @@ import axios from 'axios';
 
 // Create new user
 
-const datos = { resp: null, error: null };
-const url = `${process.env.MONGO_URL}/api/users`;
-console.log(process.env.MONGO_URL);
+// const datos = { resp: null, error: null };
+// const url = `${process.env.MONGO_URL}/api/users`;
+// console.log(process.env.MONGO_URL);
 
-export const register = async (data) => {
-  const resp = await axios.post(
-    'https://no-country-rest-server.herokuapp.com/api/users',
-    data,
-  );
+// 'https://no-country-rest-server.herokuapp.com/api/users' // deploy del back
 
-  console.log(resp);
-  if (resp.ok) {
-    const ok = await resp.json();
-    datos.resp = ok;
-    datos.error = null;
-  } else {
-    const err = await resp.json();
-    datos.resp = null;
-    datos.error = err;
+
+export const register = async (dataNewUser) => {
+  try {
+    const resp = await axios.post(
+      '/api/users/create',
+      dataNewUser,
+    );
+    // console.log(resp, 'la respuesta del back, en helpers');
+    return resp.data;
+
+  } catch (error) {
+    return {msj:'Error, user not created', error: error};
   }
-  return datos;
 };

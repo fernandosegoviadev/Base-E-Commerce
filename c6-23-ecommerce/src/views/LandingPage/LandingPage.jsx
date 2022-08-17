@@ -1,4 +1,4 @@
-import LandingPageImage from '../../images/Landing page - SignIn-SignUp.png';
+import LandingPageInfoImage from '../../images/Landing page - Info.png';
 import Navigate from '../../components/Navigate/Navigate';
 import Sign from '../../components/Sign/Sign';
 import style from './styles/LandingPage.module.css';
@@ -12,7 +12,7 @@ function LandingPage() {
       </div>
       <div className={style.landingBox}>
         <div className={style.infoBox}>
-          <img src={LandingPageImage} className={style.imageLanding} />
+          <img src={LandingPageInfoImage} className={style.imageLanding} />
         </div>
         <div className={style.signBox}>
           <Sign />
