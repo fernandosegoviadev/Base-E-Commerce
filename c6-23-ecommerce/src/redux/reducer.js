@@ -1,4 +1,7 @@
-import { GET_CATEGORIES, GET_ALL_PRODUCTS, GET_ONE_PRODUCT } from "./actionTypes";
+import {
+    GET_ALL_CATEGORIES, GET_ALL_PRODUCTS, GET_ONE_PRODUCT,
+    CLEAR_ONE_PRODUCT,
+} from "./actionTypes";
 
 const initialState = {
     listCategories: [],
@@ -21,13 +24,19 @@ export const Reducer = (state = initialState, action) => {
                 ...state,
                 oneProduct: action.payload
             }
-        // case "GET_INFO":
-        //     // console.log('llega al reducer', action.payload);
-        //     return {...state, infoApi: action.payload }
+        case CLEAR_ONE_PRODUCT:
+            // console.log('llega clear Product al reducer');
+            return {
+                ...state, 
+                oneProduct: action.payload 
+            }
 
-        // case "GET_CHANNEL_INFO":
-        //     // console.log('llega al reducer channelInfo', action.payload);
-        //     return {...state, channelInfoApi: action.payload }
+        case GET_ALL_CATEGORIES:
+            // console.log('llega al reducer ListCategories', action.payload);
+            return {
+                ...state, 
+                listCategories: action.payload.data 
+            }
 
 
         default:

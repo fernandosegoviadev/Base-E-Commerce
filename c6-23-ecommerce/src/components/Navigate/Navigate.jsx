@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Logout from "../Logout/Logout";
 
 
 function Navigate() {
@@ -36,6 +37,7 @@ function Navigate() {
             <button onClick={goSales}> Sales</button>
             <button onClick={goShopping}> Shopping</button>          
             <button onClick={goProfile}> Profile</button>
+            <Logout/>
         </div>
     );
 }

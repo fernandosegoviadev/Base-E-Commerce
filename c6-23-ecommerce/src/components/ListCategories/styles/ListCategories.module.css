@@ -1,0 +1,64 @@
+*{box-sizing: border-box;}
+
+.openButton {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+.listPopup {
+  display: none;
+  min-height: auto;
+  min-width: auto;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.listContainer {
+  min-height: 600px;
+  min-width: 500px;
+  padding: 10px;
+  background-color: white;
+}
+
+.listContainer input[type=text], .listContainer input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.listContainer input[type=text]:focus, .listContainer input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.listContainer .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.listContainer .cancel {
+  background-color: red;
+}
+
+.listContainer .btn:hover, .open-button:hover {
+  opacity: 1;
+}

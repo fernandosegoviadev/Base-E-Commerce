@@ -11,11 +11,11 @@ import axios from "axios";
 //         images: ["url imagen 1", "url imagen 2", "url imagen 3"], // Array de string de url de imágenes secundarias
 //         quantity: 0,                                             // Un número entero
 //         price: 0,                                                // Un número entero o decimal
-//         category: ["62f3e4e39654b45b0f46a48f"]                   // Array de ids de categorias, 
+//         categories: ["62f3e4e39654b45b0f46a48f"]                   // Array de ids de categorias, 
 //     }
 // }
 
-export const createProduct = async (infoNewProduct) => {
+export const createNewProduct = async (infoNewProduct) => {
     console.log('create product request', infoNewProduct);
 
     let { dataNewProduct } = infoNewProduct;
@@ -24,7 +24,7 @@ export const createProduct = async (infoNewProduct) => {
     try {
         let newProduct = await axios({
             method: 'POST',
-            url: '/api/prouducts/create"',
+            url: '/api/products/create',
             data: infoNewProduct,
         })
             .then((response) => {
@@ -53,11 +53,11 @@ export const createProduct = async (infoNewProduct) => {
 //         images: ["url imagen 1", "url imagen 2", "url imagen 4"],   // Array de string de url de imágenes secundarias
 //         quantity: 0,                                               // Un número entero
 //         price: 0,                                                  // Un número entero o decimal       
-//         category: ["62f3e4e39654b45b0f46a48f"]                     // Array de ids de categorias (Colección Categories)
+//         categories: ["62f3e4e39654b45b0f46a48f"]                     // Array de ids de categorias (Colección Categories)
 //     }
 // }
 export const editProduct = async (infoUpadateCategory) => {
-    console.log('edit product request', infoUpadateCategory);
+    // console.log('edit product request', infoUpadateCategory);
 
     let { idProduct, dataUpdateProduct } = infoUpadateCategory;
     if (!idProduct || !dataUpdateProduct) return 'insufficient data';
@@ -65,7 +65,7 @@ export const editProduct = async (infoUpadateCategory) => {
     try {
         let updatedProduct = await axios({
             method: 'PUT',
-            url: '/api/prouducts/edit',
+            url: '/api/products/edit',            
             data: infoUpadateCategory,
         })
             .then((response) => {
@@ -73,7 +73,7 @@ export const editProduct = async (infoUpadateCategory) => {
             })
             .catch((err) => console.log(err))
 
-        console.log(updatedProduct, 'response edit product');
+        // console.log(updatedProduct, 'response edit product');
 
         return updatedProduct;
 

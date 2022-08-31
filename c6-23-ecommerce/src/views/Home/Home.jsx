@@ -4,31 +4,68 @@ import Cards from '../../components/Cards/Cards';
 import { useState } from 'react';
 import CreateButtons from '../../components/CreateButtons/CreateButtons';
 import style from './styles/Home.module.css';
+import { userInfo } from '../../helpers/others';
+import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import { getAllCategories } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 
-function UserView({ userType }) {
+function UserView({ userData }) {
     return (
         <div>
             <h1>User View</h1>
-            <Cards userType={userType} />
+            <Cards userData={userData} />
         </div>
     )
 }
 
-function AdminView({ userType }) {
+function AdminView({ userData }) {
     return (
         <div>
             <h1>Admin View</h1>
             <CreateButtons />
-            <Cards userType={userType} />
+            <Cards
+                userData={userData}
+            />
         </div>
     )
 }
 
 function Home() {
-    const [userType, setUserType] = useState('user');
+    const [userData, setUserData] = useState(false);
     const [image, setImage] = useState(false);
+
+    const { name, userId, role } = userInfo();
+
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+
+    // console.log(name, userId, role, 'local strorage');
+    const categories = useSelector((state) => state.listCategories);
+
+    const getCategories = () => {
+        console.log('se ejecuta get Categories')
+        dispatch(getAllCategories());
+    }
+
+    useEffect(() => {
+        if (!userData) {
+            setUserData({ name, userId, role });
+        }
+        if (!categories.length) {
+            getCategories();
+        }
+        if (userData) {
+            if (!name && !userId && !role) { // Madar el user a la landin page
+                navigate('../', { replace: true });
+            }
+        }
+    }, [name, userId, role])
+
 
     const onImage = () => {
         if (image === true) return setImage(false);
@@ -39,16 +76,17 @@ function Home() {
         <div className={style.mainHomeBox}>
             <div className={style.navigationBox}>
                 <Navigate />
-                <h4>Home</h4>
+                <h4>Home {userData.name}</h4>
+
             </div>
             <button onClick={() => onImage()}>Imagen on/off</button>
             {image && <img src={homeImage} />}
             <p></p>
-            <button onClick={() => setUserType('user')}>Home User</button>
-            <button onClick={() => setUserType('admin')}>Home Admin</button>
+            <button onClick={() => setUserData({ ...userData, role: 'user' })}>Home User</button>
+            <button onClick={() => setUserData({ ...userData, role: 'admin' })}>Home Admin</button>
 
-            {userType === 'user' && <UserView userType={userType} />}
-            {userType === 'admin' && <AdminView userType={userType} />}
+            {userData.role === 'user' && <UserView userData={userData} />}
+            {userData.role === 'admin' && <AdminView userData={userData} />}
         </div>
     );
 }

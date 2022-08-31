@@ -1,8 +1,8 @@
+import style from './styles/RegisterForm.module.css';
+import { register } from '../../../helpers/signUp';
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import { register } from '../../../helpers/signUp';
-import style from './styles/RegisterForm.module.css';
 // import { useState } from 'react';
 
 const SignupSchema = Yup.object().shape({

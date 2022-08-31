@@ -42,12 +42,13 @@ router.get('/productbyid', async (req, res) => {
 //         "images": ["url imagen 1","url imagen 2", "url imagen 3"], // Array de string de url de imágenes secundarias
 //         "quantity": 0,                                             // Un número entero
 //         "price": 0,                                                // Un número entero o decimal
-//         "category": ["62f3e4e39654b45b0f46a48f"]                   // Array de ids de categorias, 
+//         "categories": ["62f3e4e39654b45b0f46a48f"]                   // Array de ids de categorias, 
 //     }
 // }
 router.post('/create', async (req, res) => {
     let {dataNewProduct} = req.body;
-    // console.log(dataNewProduct);
+    
+    console.log(req.body);
     // console.log('Esto es /api/products/create (post)')
 
     let create = await createProduct(dataNewProduct);

@@ -6,7 +6,7 @@ import axios from "axios";
 //     name: "category 1",
 //     description: "description category"
 // };
-export const createCategory = async (infoNewCategory) => {
+export const createNewCategory = async (infoNewCategory) => {
     console.log('create category request', infoNewCategory);
 
     let { name, description } = infoNewCategory;
@@ -66,9 +66,10 @@ export const editCategory = async (infoUpadateCategory) => {
 }
 
 // Delete category - Estructura
-// let inforCategoy = {
+// let infoCategory = {
 //     idCategory: "idCategoría",                      // * String, id de la categoría a eliminar
 // }
+
 export const deleteCategory = async (infoCategory) => {
     console.log('delete category request', infoCategory);
 

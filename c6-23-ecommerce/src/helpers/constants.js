@@ -1,0 +1,1 @@
+export const imgNotFound = 'https://www.digi.com.py/images/image-not-found.png'

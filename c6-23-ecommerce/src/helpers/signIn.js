@@ -43,10 +43,12 @@ export const sigin = async (dataUser) => {
 // Logout users // api/sessions/logout
 
 export const logout = async (dataUser) => {
+    console.log('llega el llamado al logout');
     try {
         const resp = await axios.post(
             'api/sessions/logout',
             dataUser,
+            { 'X-Requested-With': 'XMLHttpRequest' },
         );
         // console.log(resp, 'la respuesta del back, en helpers');
         return resp.data;

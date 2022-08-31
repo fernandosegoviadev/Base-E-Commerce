@@ -31,7 +31,7 @@ const ProductsSchema = Schema({
         required: true,
         default: 0
     },
-    category: { // Un producto puede pertenecer a más de una categoría
+    categories: { // Un producto puede pertenecer a más de una categoría
         type: Array,
         of: mongoose.SchemaTypes.ObjectId,
         ref: "Categories",

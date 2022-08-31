@@ -19,14 +19,14 @@ https://rest-server-no-country.herokuapp.com
         {
             "name": "facu1",
             "email": "facu1@gmail.com",
-            "role": "ADMIN_ROLE",
+            "role": "admin",
             "google": false,
             "uid": "61d2082967f6669f3b7a6aac"
         },
         {
             "name": "facu2",
             "email": "facu2@gmail.com",
-            "role": "USER_ROLE",
+            "role": "user",
             "google": false,
             "uid": "61d2082967f6669f3b7b3vf8"
         }
@@ -40,7 +40,7 @@ https://rest-server-no-country.herokuapp.com
     "name":"facu1",
     "email":"facu1@gmail.com",
     "password":"123456",
-    "role":"USER_ROLE" 
+    "role":"user" 
 ```
 
 * Response 
@@ -49,7 +49,7 @@ https://rest-server-no-country.herokuapp.com
     "user": {
         "name": "facu1",
         "email": "facu1@gmail.com",
-        "role": "USER_ROLE",
+        "role": "user",
         "google": false,
         "uid": "61d73ef0da40470d058c115b"
     }
@@ -57,7 +57,7 @@ https://rest-server-no-country.herokuapp.com
 
 #### Put
 * Endpoint ``/api/users/id``
-* Body ``"role":"ADMIN_ROLE"``
+* Body ``"role":"admin"``
 
 * Response
 ```js
@@ -65,7 +65,7 @@ https://rest-server-no-country.herokuapp.com
     "user": {
         "name": "facu1",
         "email": "facu1@gmail.com",
-        "role": "ADMIN_ROLE",
+        "role": "admin",
         "google": false,
         "uid": "61d73ef0da40470d058c115b"
     }
@@ -80,7 +80,7 @@ https://rest-server-no-country.herokuapp.com
     "user": {
         "name": "test6",
         "email": "test6@test.com",
-        "role": "ADMIN_ROLE",
+        "role": "admin",
         "google": false,
         "uid": "61d73ef0da40470d058c115b"
     }

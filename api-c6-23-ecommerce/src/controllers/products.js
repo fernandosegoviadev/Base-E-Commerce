@@ -13,7 +13,8 @@ const isValidObjectId = (id) => {
 const getProducts = async () => {
 
     try {
-        let allProducts = await Products.find();
+        let allProducts = await Products.find().
+        populate('categories');
 
         return { get: true, data: allProducts };
 
@@ -54,7 +55,7 @@ const getProductById = async (idProduct) => {
 
 const createProduct = async (dataNewProduct) => {
     let { name, description } = dataNewProduct;
-    // let { mainImg, images, quantity, price, category } = dataNewProduct;
+    // let { mainImg, images, quantity, price, categories } = dataNewProduct;
 
     if (name && description) {
 
